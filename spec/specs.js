@@ -29,5 +29,19 @@ describe ("Space", function() {
       Space.isPrototypeOf(testSpace).should.equal(true);
     });
   });
+  describe("markBy", function() {
+    it("lets a player mark a space", function() {
+      var testPlayer = Player.create("O");
+      var testSpace = Space.create(2, 2);
+      testSpace.markBy(testPlayer);
+      testSpace.markedBy.should.equal(testPlayer);
+    });
+  });
+});
+describe("Board", function() {
+  it("creates 9 spaces when it is initialized", function() {
+    var testBoard = Object.create(Board);
+    
+  });
 });
 
