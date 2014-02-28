@@ -5,7 +5,6 @@ var Player = {
   create: function(playerSymbol) {
     var player = Object.create(Player);
     player.initialize(playerSymbol);
-    console.log(player);
     return player;
   }
 }
@@ -21,7 +20,18 @@ var Space = {
     return space;
   },
   markBy: function(player) {
-    console.log(this);
     this.markedBy = player;                 
   }
-}
+};
+
+var Board = {
+    initialize: function (row, column) {
+      this.boardArray = [];
+      for(var x = 1; x <= row; x++) {
+        for(var y = 1; y <= column; y++) {
+          console.log(this.boardArray);
+          this.boardArray.push(Space.create(x, y));
+        }
+      } 
+    }
+};

@@ -39,9 +39,23 @@ describe ("Space", function() {
   });
 });
 describe("Board", function() {
-  it("creates 9 spaces when it is initialized", function() {
-    var testBoard = Object.create(Board);
-    
+  describe("initialize", function() {  
+    it("creates 9 spaces when it is initialized", function() {
+      var testBoard = Object.create(Board);
+      testBoard.initialize(3, 3);
+      testBoard.boardArray.length.should.equal(9);
+    });
+    it('creates board OBJECTS when initialized', function() {
+      var testBoard = Object.create(Board);
+      testBoard.initialize(3, 3);
+      Space.isPrototypeOf(testBoard.boardArray[0]).should.equal(true);
+    });
+  });  
+});
+describe("Game", function() {
+  describe("CreatePlayer", function() {
+    it("will create two players for the game.", function() {
+      
+    });
   });
 });
-
