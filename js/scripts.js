@@ -1,3 +1,9 @@
+var Game = {
+  createPlayers: function() {
+
+
+  }
+}
 var Player = {
   initialize: function(playerSymbol) {
     this.symbol = playerSymbol;
@@ -29,9 +35,14 @@ var Board = {
       this.boardArray = [];
       for(var x = 1; x <= row; x++) {
         for(var y = 1; y <= column; y++) {
-          console.log(this.boardArray);
           this.boardArray.push(Space.create(x, y));
         }
       } 
+    },
+    create: function (row, column) {
+      var board = Object.create(Board); 
+      board.initialize(row, column);
+      console.log(board);
+      return board;
     }
 };

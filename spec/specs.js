@@ -50,12 +50,13 @@ describe("Board", function() {
       testBoard.initialize(3, 3);
       Space.isPrototypeOf(testBoard.boardArray[0]).should.equal(true);
     });
-  });  
-});
-describe("Game", function() {
-  describe("CreatePlayer", function() {
-    it("will create two players for the game.", function() {
-      
+  }); 
+  describe("create", function() {
+    it('creates a board array', function() {
+      var testBoard = board.Create(3, 3);
+      Board.isPrototypeOf(testBoard).should.equal(true);
     });
-  });
+  }); 
 });
+
+
