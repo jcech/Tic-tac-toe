@@ -53,10 +53,71 @@ describe("Board", function() {
   }); 
   describe("create", function() {
     it('creates a board array', function() {
-      var testBoard = board.Create(3, 3);
+      var testBoard = Board.create(3, 3);
       Board.isPrototypeOf(testBoard).should.equal(true);
     });
   }); 
 });
+describe("Game", function() {
+  describe("createPlayers", function() {
+    it("will create two players for each game", function() {
+      var testGame = Object.create(Game);
+      var testPlayer = testGame.createPlayers("X", "O");
+      testGame.players.length.should.equal(2);
+    });
+  });
+  describe("createBoard", function() {
+    it("will create a board for each game", function() {
+      var testGame = Object.create(Game);
+      var testBoard = testGame.createBoard(3, 3);
+      testBoard.boardArray.length.should.equal(9);
+    });
+  });
 
+  describe("check", function() {
+    it("will check for a winner for 3 in a row", function() {
+      var testGame = Object.create(Game);
+      var testBoard = testGame.createBoard(3,3);
+      testGame.createPlayers("X", "O");
+      var testPlayer = testGame.players[0]
+      testBoard.boardArray[0].markBy(testPlayer);
+      testBoard.boardArray[1].markBy(testPlayer);
+      testBoard.boardArray[2].markBy(testPlayer);
+      // console.log(testBoard.boardArray);
+      testGame.check(testPlayer).should.equal(true);
+    });
+    it('will check for a winner for 3 in a column', function() {
+      var testGame = Object.create(Game);
+      var testBoard = testGame.createBoard(3,3);
+      testGame.createPlayers("X", "O");
+      var testPlayer = testGame.players[0]
+      testBoard.boardArray[3].markBy(testPlayer);
+      testBoard.boardArray[4].markBy(testPlayer);
+      testBoard.boardArray[5].markBy(testPlayer);
+      console.log(testBoard.boardArray);
+      testGame.check(testPlayer).should.equal(true);
+    });
+    it('will check for a winner for 3 in diangonal', function() {
+      var testGame = Object.create(Game);
+      var testBoard = testGame.createBoard(3,3);
+      testGame.createPlayers("X", "O");
+      var testPlayer = testGame.players[0]
+      testBoard.boardArray[2].markBy(testPlayer);
+      testBoard.boardArray[5].markBy(testPlayer);
+      testBoard.boardArray[8].markBy(testPlayer);
+      console.log(testBoard.boardArray);
+      testGame.check(testPlayer).should.equal(true);
+    });
+  });
 
+  describe("move", function() {
+    it("sets up a first player and change to the next player", function() {
+      var testGame = Object.create(Game);
+      var testBoard = testGame.createBoard(3,3);
+      testGame.createPlayers("X","O");
+      var testPlayer = testGame.players[0]
+      testBoard.boardArray[3].markBy(testPlayer);
+      testGame.move().should.eql[0,0,0,"X",0,0,0,0,0];
+    })
+  })
+});
