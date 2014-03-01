@@ -21,9 +21,6 @@ var Game = {
 
   check: function(player) {
      
-
-    
-    // for (var i = 0; i <= 8; i++) {
       if ((this.board.boardArray[0].markedBy === player) && 
         (this.board.boardArray[1].markedBy === player) && 
         (this.board.boardArray[2].markedBy === player)) { 
@@ -53,69 +50,8 @@ var Game = {
       (this.board.boardArray[5].markedBy === player) &&
       (this.board.boardArray[8].markedBy === player)) {
           return true;
-      }
-       
-
-          // else if ((this.board.boardArray[3].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[4].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[5].markedBy.symbol === 'O')) {
-          //   return true;
-          // }  else if ((this.board.boardArray[6].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[7].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[8].markedBy.symbol === 'X')) {
-          //   return true;
-          // }  else if ((this.board.boardArray[6].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[7].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[8].markedBy.symbol === 'O')) {
-          //   return true;
-          // }  else if ((this.board.boardArray[0].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[3].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[6].markedBy.symbol === 'X')) {
-          //   return true;
-          // }  else if ((this.board.boardArray[0].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[3].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[6].markedBy.symbol === 'O')) {
-          //   return true;
-          // }  else if ((this.board.boardArray[1].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[4].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[7].markedBy.symbol === 'X')) {
-          //   return true;
-          // }  else if ((this.board.boardArray[1].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[4].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[7].markedBy.symbol === 'O')) {
-          //   return true;
-          // }  else if ((this.board.boardArray[2].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[5].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[8].markedBy.symbol === 'X')) {
-          //   return true;
-          // }  else if ((this.board.boardArray[2].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[5].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[8].markedBy.symbol === 'O')) {
-          //   return true;
-          // }  else if ((this.board.boardArray[0].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[4].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[8].markedBy.symbol === 'X')) {
-          //   return true;
-          // }  else if ((this.board.boardArray[0].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[4].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[8].markedBy.symbol === 'O')) {
-          //   return true;
-          // }  else if ((this.board.boardArray[2].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[4].markedBy.symbol === 'X') &&
-          // (this.board.boardArray[6].markedBy.symbol === 'X')) {
-           
-          //   return true;
-          // }  else if ((this.board.boardArray[2].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[4].markedBy.symbol === 'O') &&
-          // (this.board.boardArray[6].markedBy.symbol === 'O')) {
-          //   return true;
-           // } 
-           // else {
-           //   return false;
-           // }
-    // }
+      } 
   }
-
 }
 var Player = {
   initialize: function(playerSymbol) {
